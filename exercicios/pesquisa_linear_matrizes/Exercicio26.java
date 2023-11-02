@@ -1,5 +1,6 @@
+package exercicios.pesquisa_linear_matrizes;
 
-import java.time.Clock;
+
 import java.util.Scanner;
 
 public class Exercicio26 {
@@ -10,10 +11,17 @@ public class Exercicio26 {
         Scanner entrada = new Scanner(System.in);
         
         double matriz[][] = new double[3][3];
+        int linhas = matriz.length;
+        int colunas = matriz[0].length;
         String amostraMatriz = "";
+        String elemMaioresMedia = "";
         int somaPrimeiraColuna = 0, somaSegundaColuna = 0, somaTerceiraColuna = 0;
         int somaPrimeiraLinha = 0, somaSegundaLinha = 0, somaTerceiraLinha = 0;
-        int somaTotalMatriz;
+        int somaTotalMatriz = 0, mediaMatriz = 0;
+        double maiorElemento = 0, menorElemento = 0;
+        int posicaoLinhaMaiorElem = 0, posicaoColunaMaiorElem = 0;
+        int posicaoLinhaMenorElem = 0, posicaoColunaMenorElem = 0;
+        
             
         
         //Inserir valores da matriz
@@ -25,6 +33,7 @@ public class Exercicio26 {
                 matriz[i][j] = entrada.nextDouble();   
             }   
         }
+        menorElemento = matriz[0][0];
         
         
         //Mostrando toda a matriz
@@ -44,7 +53,7 @@ public class Exercicio26 {
         {
             somaPrimeiraColuna += matriz[i][0];
         }
-        System.out.println("A soma de todos os elementos da primeira coluna Ã©: " + somaPrimeiraColuna);
+        System.out.println("A soma de todos os elementos da primeira coluna é: " + somaPrimeiraColuna);
         
         
         //Percorrendo e somando valores de cada coluna
@@ -65,8 +74,8 @@ public class Exercicio26 {
                 }
             }
         }
-        System.out.println("Da segunda coluna Ã©: " + somaSegundaColuna + 
-                "\nDa terceira coluna Ã©: " + somaTerceiraColuna);
+        System.out.println("Da segunda coluna é: " + somaSegundaColuna + 
+                "\nDa terceira coluna é: " + somaTerceiraColuna);
         
         
         //Percorrendo e somando valores de cada linha
@@ -93,13 +102,51 @@ public class Exercicio26 {
                 }
             }
         }
-        System.out.println("A soma de todos os elementos da primeira linha Ã©: " + somaPrimeiraLinha
-                + "\nDa segunda linha Ã©: " + somaSegundaLinha + 
-                "\nDa terceira linha Ã©: " + somaTerceiraLinha);
+        System.out.println("A soma de todos os elementos da primeira linha é: " + somaPrimeiraLinha
+                + "\nDa segunda linha é: " + somaSegundaLinha + 
+                "\nDa terceira linha é: " + somaTerceiraLinha);
         
         
         somaTotalMatriz = somaPrimeiraColuna + somaSegundaColuna + somaTerceiraColuna;
-        System.out.println("A soma de todos os valores da matriz Ã©: " + somaTotalMatriz);
+        System.out.println("A soma de todos os valores da matriz é: " + somaTotalMatriz);
+        
+        mediaMatriz = somaTotalMatriz / (linhas * colunas);
+        System.out.println("A média dos elementos da matriz é: " + mediaMatriz);
+        
+        for (int i = 0; i < 3; i++) 
+        {
+            for (int j = 0; j < 3; j++) 
+            {
+                //Juntando os elementos maiores que a média
+                if (matriz[i][j] > mediaMatriz) 
+                {
+                    elemMaioresMedia += matriz[i][j] + " ";
+                }
+                
+                //Identificando o maior número da matriz e armazenando a posição
+                if (matriz[i][j] > maiorElemento) 
+                {
+                    maiorElemento = matriz[i][j];
+                    posicaoColunaMaiorElem = j;
+                    posicaoLinhaMaiorElem = i;
+                }
+                
+                //Identificando o menor número da matriz e armazenando a posição
+                if (matriz[i][j] < menorElemento) 
+                {
+                    menorElemento = matriz[i][j];
+                    posicaoColunaMenorElem = j;
+                    posicaoLinhaMenorElem = i;
+                }
+            }
+        }
+        System.out.println("Os elementos maiores que a média são: " + elemMaioresMedia);
+        
+        System.out.println("O maior elemento da matriz é o número " + maiorElemento + 
+                " que se encontra na coluna " + (posicaoColunaMaiorElem + 1) + " na linha " + (posicaoLinhaMaiorElem + 1));
+        
+        System.out.println("O menor elemento da matriz é o número " + menorElemento + 
+                " que se encontra na coluna " + (posicaoColunaMenorElem + 1) + " na linha " + (posicaoLinhaMenorElem + 1));
         
     }
     
