@@ -1,4 +1,4 @@
-package exercicios.poo_basico.Exercicio27.Model;
+package exercicios.poo_basico.Exercicio27e28.Model;
 
 import java.util.Scanner;
 

@@ -1,7 +1,7 @@
-package exercicios.poo_basico.Exercicio27.View;
+package exercicios.poo_basico.Exercicio27e28.View;
 
-import exercicios.poo_basico.Exercicio27.Model.Aluno;
-import exercicios.poo_basico.Exercicio27.Model.Funcionario;
+import exercicios.poo_basico.Exercicio27e28.Model.Aluno;
+import exercicios.poo_basico.Exercicio27e28.Model.Funcionario;
 
 
 public class Principal {
