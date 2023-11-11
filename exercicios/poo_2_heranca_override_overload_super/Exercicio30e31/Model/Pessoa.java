@@ -49,9 +49,9 @@ public class Pessoa
     
     public void mostrarDados()
     {
-        getId();
-        getNome();
-        getIdade();
+        System.out.println("ID: " + this.id);
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Idade: " + this.idade);
     }
     
 }

@@ -27,20 +27,20 @@ public class Principal {
         
         System.out.println("Aluno 1");
         aluno1.mostrarDados();
-        aluno1.verificarFormando();
-        aluno1.verificarFormando(10);
+        System.out.println(aluno1.verificarFormando());
+        System.out.println(aluno1.verificarFormando(10));
         System.out.println("");
         
         System.out.println("Professor 1");
         prof1.mostrarDados();
-        prof1.calcularImposto();
-        prof1.calcularImposto(6000);
+        System.out.println("Impostos: " + prof1.calcularImposto());
+        System.out.println("Impostos: " + prof1.calcularImposto(6000));
         System.out.println("");
         
         System.out.println("Funcionário 1");
         func1.mostrarDados();
-        func1.reducaoImpostoRenda();
-        func1.reducaoImpostoRenda(3);
+        System.out.println("Elegível para redução de imposto de renda: " + func1.reducaoImpostoRenda());
+        System.out.println("Elegível para redução de imposto de renda: " + func1.reducaoImpostoRenda(3));
         System.out.println("");
         
     }
