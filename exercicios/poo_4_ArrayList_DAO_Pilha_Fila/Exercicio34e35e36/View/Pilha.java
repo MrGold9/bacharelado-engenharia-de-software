@@ -77,6 +77,8 @@ public class Pilha {
         
         System.out.println("Removendo o aluno " + pilha.pop().getNome() + " da pilha");
         
+        System.out.println("A pilha está vazia? " + pilha.empty());
+        
     }
 
 }
